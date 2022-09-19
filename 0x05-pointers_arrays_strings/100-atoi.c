@@ -1,24 +1,24 @@
-#include "main.h"
-
 /**
-* _strcpy - Copy paste string
-* @dest: destination
-* @src: source
-*
-* Return: destination
+ * _atoi - converts a string to an integer
+ *
+ * @s: string input parameter
+ *
+ * Return: converted integer from string
 */
 
-char *_strcpy(char *dest, char *src)
+int _atoi(char *s)
 {
-	int inc = 0;
+	unsigned int num = 0;
+	int sign = 1;
 
-	while (*(src + inc) != '\0')
-	{
-		*(dest + inc) = *(src + inc);
-		inc++;
-	}
-	*(dest + inc) = '\0';
+	do {
+		if (*s == '-')
+			sign *= -1;
+		else if (*s >= '0' && *s <= '9')
+			num = (num * 10) + (*s - '0');
+		else if (num > 0)
+			break;
+	} while (*s++);
 
-
-	return (dest);
+	return (num * sign);
 }
