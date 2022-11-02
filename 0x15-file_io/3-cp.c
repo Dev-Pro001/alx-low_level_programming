@@ -83,4 +83,4 @@ int main(int argc, char *argv[])
 		__exit(100, NULL, file_out);
 
 	return (0);
-
+}
